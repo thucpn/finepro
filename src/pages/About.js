@@ -1,68 +1,52 @@
-import React from "react";
-import AnimationRevealPage from "helpers/AnimationRevealPage.js";
-import tw from "twin.macro";
-import styled from "styled-components"; //eslint-disable-line
-import { css } from "styled-components/macro"; //eslint-disable-line
-import Header from "components/headers/light.js";
-import Footer from "components/footers/FiveColumnWithInputForm.js";
-import MainFeature1 from "components/features/TwoColWithButton.js";
-// import MainFeature2 from "components/features/TwoColSingleFeatureWithStats.js";
-// import MainFeature3 from "components/features/TwoColSingleFeatureWithStats2.js";
-import Features from "components/features/ThreeColSimple.js";
-// import Features from "components/features/ThreeColWithSideImage.js";
-import TeamCardGrid from "components/cards/ProfileThreeColGrid.js";
-
-import SupportIconImage from "images/support-icon.svg";
-import ShieldIconImage from "images/shield-icon.svg";
-import CustomerLoveIconImage from "images/simple-icon.svg";
+import TeamCardGrid from 'components/cards/ProfileThreeColGrid.js';
+import Features from 'components/features/ThreeColSimple.js';
+import MainFeature1 from 'components/features/TwoColWithButton.js';
+import Footer from 'components/footers/MiniCenteredFooter.js';
+import Header from 'components/headers/light.js';
+import AnimationRevealPage from 'helpers/AnimationRevealPage.js';
+import ShieldIconImage from 'images/shield-icon.svg';
+import CustomizeIconImage from 'images/customize-icon.svg';
+import SupportIconImage from 'images/support-icon.svg';
+import React from 'react';
+import tw from 'twin.macro';
 
 const Subheading = tw.span`uppercase tracking-wider text-sm`;
 export default () => {
-  return (
-    <AnimationRevealPage>
-      <Header />
-      <MainFeature1
-        subheading={<Subheading>About Treact</Subheading>}
-        heading="We are a modern design agency."
-        buttonRounded={false}
-        primaryButtonText="See Portfolio"
-        imageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
-      />
-      <MainFeature1
-        subheading={<Subheading>Our Vision</Subheading>}
-        heading="We aim to disrupt the design space."
-        buttonRounded={false}
-        primaryButtonText="Contact Us"
-        imageSrc="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-        textOnLeft={false}
-      />
-      <Features
-        subheading={<Subheading>Our Values</Subheading>}
-        heading="We follow these."
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        cards={[
-          {
-            imageSrc: SupportIconImage,
-            title: "24/7 Support",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
-          },
-          {
-            imageSrc: ShieldIconImage,
-            title: "Strong Teams",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
-          },
-          {
-            imageSrc: CustomerLoveIconImage,
-            title: "Customer Satisfaction",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
-          },
-        ]}
-        linkText=""
-      />
-      <TeamCardGrid 
-        subheading={<Subheading>Our Team</Subheading>}
-      />
-      <Footer />
-    </AnimationRevealPage>
-  );
+	return (
+		<AnimationRevealPage>
+			<Header />
+			<MainFeature1
+				subheading={<Subheading>Về Finepro</Subheading>}
+				heading='Công ty tự động hoá hiện đại'
+				buttonRounded={false}
+				primaryButtonText='Liên hệ hợp tác'
+				imageSrc='https://images.unsplash.com/photo-1615378809998-afc205e73bad?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
+			/>
+			<Features
+				subheading={<Subheading>Các giá trị cốt lõi</Subheading>}
+				heading='Chúng tôi hướng đến'
+				description='Phục vụ khách hàng hết mình, tận tâm. Cung cấp giải pháp uy tín, chất lượng'
+				cards={[
+					{
+						imageSrc: ShieldIconImage,
+						title: 'An toàn',
+						description: 'Chúng tôi đề cao yếu tố an toàn lên hàng đầu.',
+					},
+					{
+						imageSrc: SupportIconImage,
+						title: 'Hỗ trợ 24/7',
+						description: 'Luôn đồng hành với quý khách hàng mọi lúc mọi nơi.',
+					},
+					{
+						imageSrc: CustomizeIconImage,
+						title: 'Đa dạng',
+						description: 'Đầy đủ danh mục, sản phẩm và giải pháp.',
+					},
+				]}
+				linkText=''
+			/>
+			<TeamCardGrid />
+			<Footer />
+		</AnimationRevealPage>
+	);
 };

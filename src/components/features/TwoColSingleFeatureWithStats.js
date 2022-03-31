@@ -32,20 +32,20 @@ export default ({textOnLeft = false}) => {
   //Change the statistics variable as you like, add or delete objects
   const statistics = [
     {
-      key: "Countries",
-      value: "192",
+      key: "Danh mục",
+      value: "20",
     },
     {
-      key: "Hotels",
+      key: "Sản phẩm",
       value: "479",
     },
     {
-      key: "Rooms",
-      value: "2093",
+      key: "Khách hàng",
+      value: "1200",
     },
     {
-      key: "Workers",
-      value: "10347",
+      key: "Nhân viên",
+      value: "524",
     }
   ]
 
@@ -53,12 +53,12 @@ export default ({textOnLeft = false}) => {
     <Container>
       <TwoColumn>
         <ImageColumn>
-          <Image imageSrc="https://images.unsplash.com/photo-1582564286939-400a311013a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80" />
+          <Image imageSrc="https://images.unsplash.com/photo-1647427060118-4911c9821b82?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
         </ImageColumn>
         <TextColumn textOnLeft={textOnLeft}>
           <TextContent>
-            <Heading>We have the best service.</Heading>
-            <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Description>
+            <Heading>Tư vấn những giải pháp tốt nhất.</Heading>
+            <Description>Chúng tôi cung cấp đầy đủ các dịch vụ để giúp khách hàng hoạt động tốt hơn. Bắt đầu từ việc kiến tạo ra các tiêu chuẩn hoàn hảo để vận hàng máy móc hoạt động</Description>
             <Statistics>
               {statistics.map((statistic, index) => (
               <Statistic key={index}>

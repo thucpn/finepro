@@ -4,12 +4,12 @@ import { PrimaryButton } from 'components/misc/Buttons';
 import { SectionHeading } from 'components/misc/Headings';
 import { Container, ContentWithPaddingXl } from 'components/misc/Layouts';
 import AnimationRevealPage from 'helpers/AnimationRevealPage.js';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { css } from 'styled-components/macro';
 import tw from 'twin.macro';
 
-const HeadingRow = tw.div`flex`;
+const HeadingRow = tw.div`flex mb-6`;
 const Heading = tw(SectionHeading)`text-gray-900`;
 const Posts = tw.div`mt-6 sm:-mr-8 flex flex-wrap`;
 const PostContainer = styled.div`
@@ -44,24 +44,51 @@ const Info = tw.div`p-8 border-2 border-t-0 rounded-lg rounded-t-none`;
 const Category = tw.div`uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose after:content after:block after:border-b-2 after:border-primary-500 after:w-8`;
 const CreationDate = tw.div`mt-4 uppercase text-gray-600 italic font-semibold text-xs`;
 const Title = tw.div`mt-1 font-black text-2xl text-gray-900 group-hover:text-primary-500 transition duration-300`;
-const Description = tw.div`mb-6`;
+const Description = tw.div``;
+
+const ButtonContainer = tw.div`flex justify-center`;
+const LoadMoreButton = tw(PrimaryButton)`mt-16 mx-auto`;
+
+const Input = tw.input`mt-6 mr-6 first:mt-0 border-b-2 py-3 focus:outline-none font-medium transition duration-300 hocus:border-primary-500`;
 
 export default ({
-	headingText = 'Đối tác liên kết với Finepro',
+	headingText = 'Sản phẩm và dự án của công ty Phúc Cần',
 	posts = [
 		{
 			imageSrc:
-				'https://vcdn-kinhdoanh.vnecdn.net/2020/11/07/office-working-1-2-jpg-1604734-5209-4683-1604734359.jpg',
-			category: 'Đối tác thân thiết',
-			date: 'Hợp tác trên 3 năm',
-			title: 'CÔNG TY TNHH CÔNG NGHIỆP PHÚC CẦN',
-			description:
-				'Công ty TNHH CN Phúc Cần được Ban Quản Lý các khu công nghiệp Tỉnh Bình Dương cấp giấy chứng nhận Đầu tư ngày 27 tháng 12 năm 2012 hoạt động sản xuất kinh doanh tại KCN Nam Tân Uyên, Tỉnh Bình Dương.',
-			url: 'https://timerse.com',
-			featured: true,
+				'https://images.unsplash.com/photo-1567789884554-0b844b597180?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+			category: 'Dự án',
+			title: 'Sản xuất xe hơi chạy bằng điện',
+		},
+		{
+			imageSrc:
+				'https://images.unsplash.com/photo-1606206886378-e49a19ad0933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+			category: 'Dự án',
+			title: 'Nghiên cứu kỹ thuật laze xanh',
+		},
+		{
+			imageSrc:
+				'https://images.unsplash.com/photo-1628843226223-989e20810393?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1631&q=80',
+			category: 'Sản phẩm',
+			title: 'Bếp điện dân dụng an toàn tiện lợi',
+		},
+
+		{
+			imageSrc:
+				'https://images.unsplash.com/photo-1581622558663-b2e33377dfb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+			category: 'Sản phẩm',
+			title: 'Máy rửa chén dĩa hoàn toàn tự động',
 		},
 	],
 }) => {
+	const [name, setName] = useState('');
+	console.log(name);
+
+	const [visible, setVisible] = useState(6);
+	const onLoadMoreClick = () => {
+		setVisible((v) => v + 6);
+	};
+
 	return (
 		<AnimationRevealPage>
 			<Header />
@@ -70,10 +97,24 @@ export default ({
 					<HeadingRow>
 						<Heading>{headingText}</Heading>
 					</HeadingRow>
+					<div style={{ display: 'flex' }}>
+						<div>
+							<Input
+								type='text'
+								name='name'
+								placeholder='Điền mã sản phẩm'
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</div>
+						<div>
+							<PrimaryButton buttonRounded={true}>Tìm</PrimaryButton>
+						</div>
+					</div>
+
 					<Posts>
-						{posts.map((post, index) => (
+						{posts.slice(0, visible).map((post, index) => (
 							<PostContainer key={index} featured={post.featured}>
-								<Post className='group' as='a' href={post.url}>
+								<Post className='group'>
 									<Image imageSrc={post.imageSrc} />
 									<Info>
 										<Category>{post.category}</Category>
@@ -82,14 +123,16 @@ export default ({
 										{post.featured && post.description && (
 											<Description>{post.description}</Description>
 										)}
-										<PrimaryButton buttonRounded={true} as='a' href='/san-pham'>
-											Xem sản phẩm
-										</PrimaryButton>
 									</Info>
 								</Post>
 							</PostContainer>
 						))}
 					</Posts>
+					{visible < posts.length && (
+						<ButtonContainer>
+							<LoadMoreButton onClick={onLoadMoreClick}>Xem thêm</LoadMoreButton>
+						</ButtonContainer>
+					)}
 				</ContentWithPaddingXl>
 			</Container>
 			<Footer />

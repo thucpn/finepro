@@ -47,9 +47,9 @@ export default ({
       Designed & Developed by <span tw="text-primary-500">Professionals.</span>
     </>
   ),
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+  description = "Công Ty TNHH Finepro Automation, đã hoạt động hơn 3 năm trong lĩnh vực Bán buôn máy móc, thiết bị và phụ tùng máy khác.",
   primaryButtonText = "Learn More",
-  primaryButtonUrl = "https://timerse.com",
+  primaryButtonUrl = "/lien-he",
   imageSrc = TeamIllustrationSrc,
   buttonRounded = true,
   imageRounded = true,

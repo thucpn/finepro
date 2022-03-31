@@ -7,6 +7,7 @@ import HomePage from 'pages/Home.js';
 import AboutPage from 'pages/About.js';
 import ContactPage from 'pages/Contact.js';
 import PartnerPage from 'pages/Partner';
+import ProductPage from 'pages/Product';
 
 export default function App() {
 	return (
@@ -20,6 +21,9 @@ export default function App() {
 				</Route>
 				<Route path='/doi-tac'>
 					<PartnerPage />
+				</Route>
+				<Route path='/san-pham'>
+					<ProductPage />
 				</Route>
 				<Route path='/'>
 					<HomePage />

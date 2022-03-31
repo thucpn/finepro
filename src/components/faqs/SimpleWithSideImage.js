@@ -39,9 +39,9 @@ const Answer = motion(tw.dd`pointer-events-none text-sm sm:text-base leading-rel
 
 export default ({
   subheading = "",
-  heading = "Questions",
-  description = "Here are some frequently asked questions about our hotels from our loving customers. Should you have any other questions, feel free to reach out via the contact form below.",
-  imageSrc = "https://images.unsplash.com/photo-1579427421635-a0015b804b2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1024&q=80",
+  heading = "Câu hỏi thường gặp",
+  description = "Dưới đây là một số câu hỏi thường gặp về công ty của chúng tôi từ những khách hàng yêu quý. Nếu bạn có bất kỳ câu hỏi nào khác, vui lòng liên hệ với chúng tôi bằng cách đi đến trang liên hệ",
+  imageSrc = "https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   imageContain = false,
   imageShadow = true,
   faqs = null
@@ -52,24 +52,24 @@ export default ({
    */
   const defaultFaqs = [
     {
-      question: "Is lunch provided free of cost ?",
+      question: "Dịch vụ tư vấn có miễn phí hay không ?",
       answer:
-        "Yes, it is, if you have a membership with us. Otherwise it is charged as per the menu. Some limits do apply as to how much items can be included in your lunch. This limit is enough for any one person and merely exists to discourage abusal of the system."
+        "Hoàn toàn miễn phí. Tất cả những thắc mắc, khó khăn mà quý khách gặp phải trong quá trình sử dụng dịch vụ của chúng tôi dù trong giờ hành chính hay ngoài giờ làm việc."
     },
     {
-      question: "Do you have 2 Bedroom suites ?",
+      question: "Làm thế nào để liên hệ với công ty khi có sự cố ?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "Vui lòng đi đến trang liên hệ, điền thông tin và gửi email tới chúng tôi."
     },
     {
-      question: "Are Wi-Fi costs included in the price ?",
+      question: "Tôi muốn xem các sản phẩm của đối tác, tôi cần làm gì ?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "Vui lòng đi đến trang đối tác để xem danh sách sản phẩm."
     },
     {
-      question: "Where can I reach you for support ?",
+      question: "Tôi muốn tìm kiếm một sản phẩm nào đó ?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "Vui lòng đi đến trang đối tác, danh sách sản phẩm, nhập mã sản phẩm và ấn vào nút tìm kiếm."
     }
   ];
 
