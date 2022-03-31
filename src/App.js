@@ -3,26 +3,26 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'styles/globalStyles.css';
 import 'tailwindcss/dist/base.css';
 
-import HotelTravelLandingPage from 'pages/HotelTravelLandingPage.js';
-import AboutUsPage from 'pages/AboutUs.js';
-import ContactUsPage from 'pages/ContactUs.js';
-import BlogIndexPage from 'pages/BlogIndex';
+import HomePage from 'pages/Home.js';
+import AboutPage from 'pages/About.js';
+import ContactPage from 'pages/Contact.js';
+import PartnerPage from 'pages/Partner';
 
 export default function App() {
 	return (
 		<Router>
 			<Switch>
 				<Route path='/lien-he'>
-					<ContactUsPage />
+					<ContactPage />
 				</Route>
 				<Route path='/ve-chung-toi'>
-					<AboutUsPage />
+					<AboutPage />
 				</Route>
 				<Route path='/doi-tac'>
-					<BlogIndexPage />
+					<PartnerPage />
 				</Route>
 				<Route path='/'>
-					<HotelTravelLandingPage />
+					<HomePage />
 				</Route>
 			</Switch>
 		</Router>
